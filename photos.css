@@ -12,21 +12,7 @@ body {
     scroll-behavior: smooth;
     scroll-snap-type: x proximity;
 }
-@media (max-device-width: 500px) {
-    body {
-        background: none; /* Remove the background from the body */
-    }
 
-    body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0) 86.55%, rgba(163, 26, 0, 0.84));
-        z-index: -1; /* Place it behind other content */
-    }
 }
 .navbar {
     width: 100%;
@@ -288,7 +274,7 @@ h3 {
     position: absolute;
     top: 20px;
     right: 48px;
-    font-size: 2.5rem;
+    font-size: 10.5vw;
     color: #ffffff80;
     cursor: pointer;
     transition: color 0.2s;
@@ -360,16 +346,12 @@ h3 {
     height: 100vh;
     overflow-x: auto;
     overflow-y: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* Remove display: flex; */
     scroll-snap-type: x mandatory;
     background: transparent;
-    /* Hide scrollbars for Webkit browsers */
     scrollbar-width: none; /* Firefox */
-    overflow-y: hidden;   
-
-    
+    -webkit-overflow-scrolling: touch; /* iOS momentum scroll */
+    scroll-behavior: smooth;
 }
 #carouselWrapper::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
