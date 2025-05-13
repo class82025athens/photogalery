@@ -1,0 +1,408 @@
+body {
+    font-family: "futura";
+    background: linear-gradient(50deg, rgba(0, 0, 0, 0), rgba(16, 55, 133, 0.84));
+    margin-left: 0px;
+    margin-top: 30px;
+    background-repeat: no-repeat;
+    background-size: 100%; /* Start at 100% */
+    background-attachment: fixed; /* Parallax effect */
+    height: 300vh; /* Make the page scrollable */
+    transition: background-size 0.1s linear; /* Smooth zoom effect */
+    
+    scroll-behavior: smooth;
+    scroll-snap-type: x proximity;
+}
+@media (max-device-width: 500px) {
+    body {
+        background: none; /* Remove the background from the body */
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0) 86.55%, rgba(163, 26, 0, 0.84));
+        z-index: -1; /* Place it behind other content */
+    }
+}
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centers nav items horizontally */
+    align-items: center; /* Centers nav items vertically */
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style-type: none;
+    background-color: rgba(66, 70, 74, 0.8);
+    padding: 0px;
+    margin: -0px;
+    overflow: hidden;
+    align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.navbar a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    text-align: center;
+    z-index: 1000;
+}
+@media (max-device-width: 500px) {
+    .navbar a {
+        padding: 3vw;
+        font-size: 3vw; /* Responsive font size */
+    }
+
+    
+}
+.navbar a.active {
+    background-color: rgba(255, 255, 255, 0); /* Highlight background */
+    color: rgb(156, 142, 140); /* Highlight text color */
+    font-weight: ; /* Optional: Make the text bold */
+}
+
+.navbar a:hover {
+    background-color: rgb(35, 37, 39);
+}
+
+.navbar li {
+    float: left;
+    text-align: center;
+}
+
+/* Remove dropdown styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(66, 70, 74, 0.9);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+main {
+    margin-left: 40px;
+}
+
+h1 {
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 80px;
+    text-align: center;
+    font-size: 70px;
+    font-family: Futura;
+    font-weight: 100;
+    opacity: 0; /* Start hidden */
+    animation: fadeIn3 2s ease-in-out forwards; /* Fade in smoothly */
+    z-index: -1000;
+}
+@media (max-device-width: 770px) {
+    h1{
+        font-size: 8vw; /* Responsive font size */
+        position: relative; /* Use relative positioning */
+        margin-top: 10vh; /* Adjust this value to move it down */
+        text-align: center;
+    }
+
+    
+}
+@keyframes fadeIn3 {
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+h2 {
+    font-size: 15px;
+    color: rgb(200, 200, 200);
+    text-align: center;
+    font-weight: 100;
+    margin-top: -30px;
+    opacity: 0; /* Start hidden */
+    animation: fadeIn2 10s ease-in-out forwards; /* Fade in smoothly */
+}
+@media (max-device-width: 770px) {
+    h2{
+        font-size: 3vw; /* Responsive font size */
+    }
+
+    
+}
+@media (max-width: 770px) {
+    h2{
+        font-size: 3vw; /* Responsive font size */
+    }
+
+    
+}
+@keyframes fadeIn2 {
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+p {
+    color: whitesmoke;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 40px;
+    font-weight: 500;
+    line-height: 25px;
+}
+@media (max-device-width: 770px) {
+    p{
+        font-size: 3vw; /* Responsive font size */
+    }
+
+    
+}
+img {
+    width: 800px;
+    margin-top: -80px;
+    position: center;
+}
+
+h3 {
+    color: whitesmoke;
+    text-align: center;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between grid items */
+    justify-content: center; /* Center the grid horizontally */
+    align-items: center; /* Center the grid vertically */
+    margin-top: 100px; /* Adjust margin as needed */
+    margin-left: 100px;
+    margin-right: 100px;
+    z-index: -1000;
+
+}
+
+.container img {
+    width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0; /* Remove unnecessary margins */
+    position: relative; /* Remove invalid 'center' value */
+    z-index: -1000; /* Ensure images are above the background */
+    
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 6s ease-in-out forwards; /* Fade in smoothly */
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/* Lightbox Modal Styles */
+#lightboxModal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.96);
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    flex-direction: column;
+}
+
+#lightboxImg {
+    max-width: 70vw;
+    max-height: 70vh;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(82, 86, 179, 0.801);
+    margin: 0 auto;
+    display: block;
+    /* Center the image vertically a bit higher */
+    margin-top: 40px;
+}
+
+#closeLightbox {
+    position: absolute;
+    top: 20px;
+    right: 48px;
+    font-size: 2.5rem;
+    color: #ffffff80;
+    cursor: pointer;
+    transition: color 0.2s;
+    z-index: 10001;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#closeLightbox:hover {
+    color: #ff4b4b;
+}
+
+#prevImage, #nextImage {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    color: #fff;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    transition: background 0.2s, color 0.2s;
+    z-index: 10001;
+}
+#prevImage { 
+    left: 35px;
+    color: rgba(0, 0, 0, 0.289);}
+#nextImage { right: 35px; }
+#prevImage:hover, #nextImage:hover {
+    background: #2998ff00;
+    color: #ffffff38;
+}
+
+#lightboxModal {
+    /* ...existing styles... */
+    flex-direction: column;
+}
+
+.lightbox-scroll {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    max-width: 80vw;
+    max-height: 80vh;
+    gap: 32px;
+    align-items: center;
+    padding: 40px 0;
+    scroll-behavior: smooth;
+}
+
+.lightbox-scroll img {
+    max-height: 70vh;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.801);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.lightbox-scroll img:active {
+    transform: scale(0.97);
+}
+
+#carouselWrapper {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-type: x mandatory;
+    background: transparent;
+    /* Hide scrollbars for Webkit browsers */
+    scrollbar-width: none; /* Firefox */
+    overflow-y: hidden;   
+
+    
+}
+#carouselWrapper::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+#carouselTrack {
+    display: flex;
+    height: 100%;
+}
+
+#carouselTrack img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+    flex-shrink: 0;
+    user-select: none;
+    scroll-snap-align: center;
+    margin: 0;
+    display: block;
+}
+
+.lightbox-animating {
+    position: fixed;
+    z-index: 10000;
+    transition: 
+        top 0.4s cubic-bezier(.4,2,.6,1), 
+        left 0.4s cubic-bezier(.4,2,.6,1), 
+        width 0.4s cubic-bezier(.4,2,.6,1), 
+        height 0.4s cubic-bezier(.4,2,.6,1),
+        border-radius 0.4s cubic-bezier(.4,2,.6,1);
+    pointer-events: none;
+}
+
